@@ -1,0 +1,49 @@
+doctype html
+html
+    head
+        link(href="./assets/estilosAdmin.css" rel='stylesheet')
+
+    body
+        div
+            div.contenido
+                div.contenidoArchivos
+                    each cmd in data.cmds
+                        div.carta
+                            div.cartaHeader
+
+                            div.cartaBody
+                                p=cmd.content
+                            div.cartaFooter
+
+
+
+                div.contenidoEditor
+                    p="hola"
+                    p=JSON.stringify(data)
+                    each d in Object.keys(data)
+                        p="type "+(Array.isArray(data[d]) ? "Array" : typeof data[d])
+                        if Array.isArray(data[d])
+                            p="Objeto nombre: "+d
+                            p="longitud: "+data[d].length
+                            ul#listaObjetos
+                            each obj in data[d]
+                                li
+                                    each lbl in Object.keys(obj)
+                                        label=lbl
+                                        input(value=obj[lbl])
+
+                            button(onclick=`agregar("")`)="+"
+
+                            p="valor: "+JSON.stringify(data[d])
+
+                        else
+                            p="propiedad: "+d
+                            p="valor: "+JSON.stringify(data[d])
+                    input
+                    button="agregar"
+
+
+
+
+
+        script( src="./assets/js.js")

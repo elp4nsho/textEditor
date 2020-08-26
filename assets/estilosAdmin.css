@@ -1,0 +1,33 @@
+
+
+.contenidoArchivos {
+    display: inline-block;
+    width: 68%;
+}
+
+.contenidoEditor {
+    display: inline-block;
+    width: 30%;
+
+}
+.contenido {
+    display: flex;
+    margin: 30px 0;
+    max-height: 400px;
+    min-height: 400px;
+}
+.carta{
+border: solid;
+}
+.cartaHeader{
+    border: solid;
+
+}
+.cartaBody{
+    border: solid;
+
+}
+.cartaFooter{
+    border: solid;
+
+}

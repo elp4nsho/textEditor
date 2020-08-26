@@ -1,0 +1,30 @@
+@keyframes rotate {
+0%{transform: rotate(0)}
+50%{transform: rotate(90deg)}
+100%{transform: rotate(180deg)}
+}
+textarea{
+    width: 95%;
+    height: 40vh;
+}
+input{
+    width: 85%;
+}
+.elMeoLoading{
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    /*border:solid;*/
+    text-align: center;
+    display: none;
+    background: rgba(0,0,0,0.7);
+}
+.icon{
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    background: black;
+    animation: rotate 1s linear infinite;
+}

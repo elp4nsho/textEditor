@@ -1,0 +1,49 @@
+doctype html
+html
+    head
+        link(href="./assets/swaggerui/swagger-ui.css" rel="stylesheet")
+        link(href="./assets/estilos.css" rel='stylesheet')
+
+    body
+
+
+div
+    <!--iframe(src="./assets/index.html")-->
+    button(onclick="cambiarURL()")="cambiar"
+    div(style="display:none;")
+        h1(class="titulo")="hola"
+        a(href="/apic")="apic"
+        a(href="/oli")="oli"
+        a(href="/admin")="admin"
+        a(href="/viewer")="viewer"
+        input#text(type=text)
+        button(onclick="hola()")="escribir"
+
+    div.contenido
+        div.contenidoArchivos
+            h3="Files"
+            button(onclick="crearDirectorio(prompt().toString())")="📁"
+            button(onclick="crearArchivo(prompt())")="➕"
+            button(onclick="irAHome()")="🏠"
+            br
+            small#ruta=directorioActual
+            ul#directorios
+                li(onClick="obtenerDirectorios('../')")="../"
+                each file in files
+                    li(onClick=`${file.isDirectory() ? 'obtenerDirectorios("' + file.name + '")' : 'obtenerArchivo("' + file.name + '")'}` class=`${file.isDirectory() ? "directorio" : "archivo"}` )=file.name
+                    button.eliminar(onclick=`eliminarDirectorio("${file.name}")`)="X"
+        div.contenidoEditor
+            input(value="data.txt" onkeyup=`renombrarArchivo()`)#archivoEditando
+            button#guardar(onclick="escribirArchivo()")="Guardar"
+            div(id="editor")
+            <!--textarea#archvioContenido=archivoLeido-->
+        div.contenidoEditorUI
+            div(id="swagger-ui")
+
+
+
+
+script(src="./assets/swaggerui/swagger-ui-bundle.js" charset="UTF-8")
+script(src="./assets/swaggerui/swagger-ui-standalone-preset.js" charset="UTF-8")
+script(src="./assets/ace/src-noconflict/ace.js")
+script( src="./assets/js.js")
