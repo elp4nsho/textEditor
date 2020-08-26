@@ -1,11 +1,9 @@
 doctype html
 html
     head
-        link(href="./assets/swaggerui/swagger-ui.css" rel="stylesheet")
         link(href="./assets/estilos.css" rel='stylesheet')
 
     body
-
 
 div
     <!--iframe(src="./assets/index.html")-->
@@ -35,15 +33,7 @@ div
         div.contenidoEditor
             input(value="data.txt" onkeyup=`renombrarArchivo()`)#archivoEditando
             button#guardar(onclick="escribirArchivo()")="Guardar"
-            div(id="editor")
-            <!--textarea#archvioContenido=archivoLeido-->
-        div.contenidoEditorUI
-            div(id="swagger-ui")
+            textarea#archvioContenido=archivoLeido
 
 
-
-
-script(src="./assets/swaggerui/swagger-ui-bundle.js" charset="UTF-8")
-script(src="./assets/swaggerui/swagger-ui-standalone-preset.js" charset="UTF-8")
-script(src="./assets/ace/src-noconflict/ace.js")
 script( src="./assets/js.js")
